@@ -78,7 +78,7 @@
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table mg-b-0 text-md-nowrap table-hover ">
+                <table class="table mg-b-0 text-md-nowrap">
                         <thead>
                             <tr>
                                 <th>#</th>
@@ -113,6 +113,9 @@
                                     </td>
                                 </tr>
                             @endforeach
+                            <div class="d-flex justify-content-center">
+        {!! $roles->links()!!}
+       </div>
                         </tbody>
                     </table>
                 </div>

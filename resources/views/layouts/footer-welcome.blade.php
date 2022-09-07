@@ -258,9 +258,95 @@
         </div>
 
 
-      <!-- end request Course -->
-<script>
-    $("input").intlTelInput({
-  utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/8.4.6/js/utils.js"
+
+    <!-- Vendor JS Files -->
+    <script src="aos/aos.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="glightbox/js/glightbox.min.js"></script>
+    <script src="isotope-layout/isotope.pkgd.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js'></script>
+
+
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.2/umd/popper.min.js'></script>
+
+
+
+    
+
+<!-- Internal Data tables -->
+<script src="{{ URL::asset('assets/plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ URL::asset('assets/plugins/datatable/js/dataTables.dataTables.min.js') }}"></script>
+<script src="{{ URL::asset('assets/plugins/datatable/js/dataTables.responsive.min.js') }}"></script>
+<script src="{{ URL::asset('assets/plugins/datatable/js/responsive.dataTables.min.js') }}"></script>
+<script src="{{ URL::asset('assets/plugins/datatable/js/jquery.dataTables.js') }}"></script>
+<script src="{{ URL::asset('assets/plugins/datatable/js/dataTables.bootstrap4.js') }}"></script>
+<script src="{{ URL::asset('assets/plugins/datatable/js/dataTables.buttons.min.js') }}"></script>
+<script src="{{ URL::asset('assets/plugins/datatable/js/buttons.bootstrap4.min.js') }}"></script>
+<script src="{{ URL::asset('assets/plugins/datatable/js/jszip.min.js') }}"></script>
+<script src="{{ URL::asset('assets/plugins/datatable/js/pdfmake.min.js') }}"></script>
+<script src="{{ URL::asset('assets/plugins/datatable/js/vfs_fonts.js') }}"></script>
+<script src="{{ URL::asset('assets/plugins/datatable/js/buttons.html5.min.js') }}"></script>
+<script src="{{ URL::asset('assets/plugins/datatable/js/buttons.print.min.js') }}"></script>
+<script src="{{ URL::asset('assets/plugins/datatable/js/buttons.colVis.min.js') }}"></script>
+<script src="{{ URL::asset('assets/plugins/datatable/js/dataTables.responsive.min.js') }}"></script>
+<script src="{{ URL::asset('assets/plugins/datatable/js/responsive.bootstrap4.min.js') }}"></script>
+<!--Internal  Datatable js -->
+<script src="{{ URL::asset('assets/js/table-data.js') }}"></script>
+<script src="{{ URL::asset('assets/js/modal.js') }}"></script>
+
+    <!-- jquery -->
+    <script src="{{URL::asset('assets/js/unica/jquery-3.2.1.min.js')}}"></script>
+    <!-- popper js -->
+    <script src="{{URL::asset('assets/js/unica/owl.carousel.min.js')}}"></script>
+    <!-- bootstrap js -->
+    <script src="{{URL::asset('assets/js/unica/jquery.countdown.js')}}"></script>
+    <!-- easing js -->
+    <script src="{{URL::asset('assets/js/unica/masonry.pkgd.min.js')}}"></script>
+    <!-- swiper js -->
+    <script src="{{URL::asset('assets/js/unica/magnific-popup.min.js')}}"></script>
+    <!-- swiper js -->
+    <script src="{{URL::asset('assets/js/unica/main.js')}}"></script>
+
+    <script src="{{URL::asset('assets/js/waypoints.min.js')}}"></script>
+    <!--Internal  Datepicker js -->
+<script src="{{URL::asset('assets/plugins/jquery-ui/ui/widgets/datepicker.js')}}"></script>
+<!-- Internal Select2 js-->
+<script src="{{URL::asset('assets/plugins/select2/js/select2.min.js')}}"></script>
+<!-- Internal Modal js-->
+<script src="{{URL::asset('assets/js/modal.js')}}"></script>
+  
+    <script src="/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha256-OFRAJNoaD8L3Br5lglV7VyLRf0itmoBzWUoM+Sji4/8=" crossorigin="anonymous"></script>
+    
+    <!-- Template Main JS File -->
+    <script src="js/main.js"></script>
+     <!-- jquery plugins here-->
+ "{{ URL::asset('assets/js/form-elements.js') }}"
+ <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        cssMode: true,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+        },
+        mousewheel: true,
+        keyboard: true,
+      });
+    </script>
+    <script>
+        let telInput = $("#phone")
+
+
+        </script>
+        <script>
+        $("input").intlTelInput({
+       utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/8.4.6/js/utils.js"
 });
 </script>

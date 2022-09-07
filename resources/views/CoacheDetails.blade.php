@@ -93,7 +93,7 @@
 	<section class="courses-section spad">
 		<div class="container">
 			<div class="section-title text-center">
-		     	<p>تاريخ بداية الانضمام للفريق :{{ $user->created_at}} </p>
+		     	<p>تاريخ بداية الانضمام للفريق :{{ $user->created_at->format('Y-m-d')}} </p>
 				<br>
 				<h3>  الدورات التدريبية   </h3>
 				
@@ -104,7 +104,7 @@
 				<div class="col-lg-4 col-md-6 course-item">
 					
 					<div class="course-info">
-						<h4>{{$course->created_at}}
+						<h4>{{$course->created_at->format('Y-m-d')}}
 					    <br>{{$course->desc}}</h4>
 	
 					</div>

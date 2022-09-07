@@ -154,7 +154,7 @@
 						</div>
 					</div>
 					<div class="course-info">
-						<div class="date"><i class="fa fa-clock-o"></i>    {{$course->created_at}}</div>
+						<div class="date"><i class="fa fa-clock-o"></i>    {{$course->created_at->format('Y-m-d')}}</div>
 						<h4>{{$course->desc}}<br>{{$course->note}}</h4>
 						<h4 class="cource-price">{{$course->Coach->username}}</h4>
 					</div>
@@ -189,7 +189,7 @@
 					</div>
 				</div>
               
-
+ 
             
   
 		    @empty
@@ -218,7 +218,7 @@
 						</div>
 					</div>
 					<div class="course-info">
-						<div class="date"><i class="fa fa-clock-o"></i>    {{$program->created_at}}</div>
+						<div class="date"><i class="fa fa-clock-o"></i>    {{$program->created_at->format('Y-m-d')}}</div>
 						<h4>أهدافنا :  {{$program->goals}} </h4>
             <h4>الرؤية :  {{$program->audince}}</h4>
 						<h4 class="cource-price"> الفئة المستهدفة :  {{$program->topics}}</h4>
@@ -293,7 +293,7 @@
 					<div class="blog-item">
 						<div class="blog-content">
 							<div class="blog-meta">
-								<span><i class="fa fa-calendar-o"></i>   {{$new->created_at}}</span>
+								<span><i class="fa fa-calendar-o"></i>   {{$new->created_at->format('Y-m-d')}}</span>
 							</div>
 							<h4>{{$new->content}}</h4>
 						</div>
@@ -308,37 +308,22 @@
 		</div>
 	</section>
 	<!-- News section -->
-
+	
 
   <!-- Gallery section -->
 	<div class="gallery-section">
 		<div class="gallery">
 			<div class="grid-sizer"></div>
+			@forelse ($images as $key => $image)
+			<div class="gallery-item set-bg" data-setbg="{{asset('storage/Media/'.$image->imageUrl)}}">
+				<a class="img-popup" href="{{asset('storage/Media/'.$image->imageUrl)}}"><i class="ti-plus"></i></a>
+			</div>
+	@empty
+	@endforelse
+		
      
-			<div class="gallery-item gi-big set-bg" data-setbg="{{asset('storage/Media/'.'Media-1661983890.jpg')}}">
-				<a class="img-popup"href="{{asset('storage/Media/'.'Media-1661983890.jpg')}}"><i class="ti-plus"></i></a>
-			</div>
-			<div class="gallery-item set-bg" data-setbg="{{asset('storage/Media/'.'Media-1661983890.jpg')}}">
-				<a class="img-popup" href="{{asset('storage/Media/'.'Media-1661983890.jpg')}}"><i class="ti-plus"></i></a>
-			</div>
-			<div class="gallery-item set-bg" data-setbg="{{asset('storage/Media/'.'Media-1661983890.jpg')}}">
-				<a class="img-popup" href="{{asset('storage/Media/'.'Media-1661983890.jpg')}}"><i class="ti-plus"></i></a>
-			</div>
-			<div class="gallery-item gi-long set-bg" data-setbg="{{asset('storage/Media/'.'Media-1661983890.jpg')}}">
-				<a class="img-popup" href="{{asset('storage/Media/'.'Media-1661983890.jpg')}}"><i class="ti-plus"></i></a>
-			</div>
-			<div class="gallery-item gi-big set-bg" data-setbg="{{asset('storage/Media/'.'Media-1661983890.jpg')}}">
-				<a class="img-popup" href="{{asset('storage/Media/'.'Media-1661983890.jpg')}}"><i class="ti-plus"></i></a>
-			</div>
-			<div class="gallery-item gi-long set-bg" data-setbg="{{asset('storage/Media/'.'Media-1661983890.jpg')}}">
-				<a class="img-popup" href="{{asset('storage/Media/'.'Media-1661983890.jpg')}}"><i class="ti-plus"></i></a>
-			</div>
-			<div class="gallery-item set-bg" data-setbg="{{asset('storage/Media/'.'Media-1661983890.jpg')}}">
-				<a class="img-popup" href="{{asset('storage/Media/'.'Media-1661983890.jpg')}}"><i class="ti-plus"></i></a>
-			</div>
-			<div class="gallery-item set-bg" data-setbg="{{asset('storage/Media/'.'Media-1661983890.jpg')}}">
-				<a class="img-popup" href="{{asset('storage/Media/'.'Media-1661983890.jpg')}}"><i class="ti-plus"></i></a>
-			</div>
+			
+		
     
 
 		</div>
@@ -420,122 +405,5 @@
  
 @include('layouts.footer-welcome')
 
-
-        
-    <!-- Vendor JS Files -->
-    <script src="aos/aos.js"></script>
-    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="glightbox/js/glightbox.min.js"></script>
-    <script src="isotope-layout/isotope.pkgd.min.js"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js'></script>
-
-
-
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.2/umd/popper.min.js'></script>
-
-
- <!-- jquery plugins here-->
- "{{ URL::asset('assets/js/form-elements.js') }}"
- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script>
-      var swiper = new Swiper(".mySwiper", {
-        cssMode: true,
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        pagination: {
-          el: ".swiper-pagination",
-        },
-        mousewheel: true,
-        keyboard: true,
-      });
-    </script>
-    <script>
-        let telInput = $("#phone")
-
-// initialize
-telInput.intlTelInput({
-    initialCountry: 'auto',
-    preferredCountries: ['us','gb','br','ru','cn','es','it'],
-    autoPlaceholder: 'aggressive',
-    utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.1.6/js/utils.js",
-    geoIpLookup: function(callback) {
-        fetch('https://ipinfo.io/json', {
-            cache: 'reload'
-        }).then(response => {
-            if ( response.ok ) {
-                 return response.json()
-            }
-            throw new Error('Failed: ' + response.status)
-        }).then(ipjson => {
-            callback(ipjson.country)
-        }).catch(e => {
-            callback('us')
-        })
-    }
-})
-
-let telInput2 = $("#phone2")
-
-// initialize
-telInput2.intlTelInput({
-    initialCountry: 'br',
-    preferredCountries: ['us','gb','br','ru','cn','es','it'],
-    autoPlaceholder: 'aggressive',
-    utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.1.6/js/utils.js"
-})
-        </script>
-    
-
-<!-- Internal Data tables -->
-<script src="{{ URL::asset('assets/plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
-<script src="{{ URL::asset('assets/plugins/datatable/js/dataTables.dataTables.min.js') }}"></script>
-<script src="{{ URL::asset('assets/plugins/datatable/js/dataTables.responsive.min.js') }}"></script>
-<script src="{{ URL::asset('assets/plugins/datatable/js/responsive.dataTables.min.js') }}"></script>
-<script src="{{ URL::asset('assets/plugins/datatable/js/jquery.dataTables.js') }}"></script>
-<script src="{{ URL::asset('assets/plugins/datatable/js/dataTables.bootstrap4.js') }}"></script>
-<script src="{{ URL::asset('assets/plugins/datatable/js/dataTables.buttons.min.js') }}"></script>
-<script src="{{ URL::asset('assets/plugins/datatable/js/buttons.bootstrap4.min.js') }}"></script>
-<script src="{{ URL::asset('assets/plugins/datatable/js/jszip.min.js') }}"></script>
-<script src="{{ URL::asset('assets/plugins/datatable/js/pdfmake.min.js') }}"></script>
-<script src="{{ URL::asset('assets/plugins/datatable/js/vfs_fonts.js') }}"></script>
-<script src="{{ URL::asset('assets/plugins/datatable/js/buttons.html5.min.js') }}"></script>
-<script src="{{ URL::asset('assets/plugins/datatable/js/buttons.print.min.js') }}"></script>
-<script src="{{ URL::asset('assets/plugins/datatable/js/buttons.colVis.min.js') }}"></script>
-<script src="{{ URL::asset('assets/plugins/datatable/js/dataTables.responsive.min.js') }}"></script>
-<script src="{{ URL::asset('assets/plugins/datatable/js/responsive.bootstrap4.min.js') }}"></script>
-<!--Internal  Datatable js -->
-<script src="{{ URL::asset('assets/js/table-data.js') }}"></script>
-<script src="{{ URL::asset('assets/js/modal.js') }}"></script>
-
-    <!-- jquery -->
-    <script src="{{URL::asset('assets/js/unica/jquery-3.2.1.min.js')}}"></script>
-    <!-- popper js -->
-    <script src="{{URL::asset('assets/js/unica/owl.carousel.min.js')}}"></script>
-    <!-- bootstrap js -->
-    <script src="{{URL::asset('assets/js/unica/jquery.countdown.js')}}"></script>
-    <!-- easing js -->
-    <script src="{{URL::asset('assets/js/unica/masonry.pkgd.min.js')}}"></script>
-    <!-- swiper js -->
-    <script src="{{URL::asset('assets/js/unica/magnific-popup.min.js')}}"></script>
-    <!-- swiper js -->
-    <script src="{{URL::asset('assets/js/unica/main.js')}}"></script>
-
-    <script src="{{URL::asset('assets/js/waypoints.min.js')}}"></script>
-    <!--Internal  Datepicker js -->
-<script src="{{URL::asset('assets/plugins/jquery-ui/ui/widgets/datepicker.js')}}"></script>
-<!-- Internal Select2 js-->
-<script src="{{URL::asset('assets/plugins/select2/js/select2.min.js')}}"></script>
-<!-- Internal Modal js-->
-<script src="{{URL::asset('assets/js/modal.js')}}"></script>
-  
-    <script src="/swiper/swiper-bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha256-OFRAJNoaD8L3Br5lglV7VyLRf0itmoBzWUoM+Sji4/8=" crossorigin="anonymous"></script>
-    
-    <!-- Template Main JS File -->
-    <script src="js/main.js"></script>
 </body>
 </html>

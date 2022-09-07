@@ -50,7 +50,7 @@
             </div>
             <div class="card-body">
                 <div class="table-responsive hoverable-table">
-                    <table class="table table-hover" id="example1" data-page-length='50' style=" text-align: center;">
+                <table class="table mg-b-0 text-md-nowrap">
                         <thead>
                             <tr>
                                 <th class="wd-10p border-bottom-0">#</th>
@@ -102,6 +102,9 @@
                                     </td>
                                 </tr>
                             @endforeach
+                            <div class="d-flex justify-content-center">
+        {!! $data->links()!!}
+       </div>
                         </tbody>
                     </table>
                 </div>

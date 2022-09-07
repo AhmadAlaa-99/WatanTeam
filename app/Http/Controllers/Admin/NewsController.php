@@ -13,10 +13,11 @@ class NewsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $news=News::select('id','content','created_at','updated_at')->latest()->paginate('8');
-        return view('Admin.News.index',compact('news'));
+        $news=News::select('id','content','created_at','updated_at')->latest()->paginate('2');
+       
+        return view('Admin.News.index',compact('news'))->with(($request->input('page', 1) - 1) * 2);
     }
 
     /**

@@ -38,7 +38,7 @@
 							</div>
 							<div class="card-body">
 								<div class="table-responsive">
-									<table id="example1" class="table key-buttons text-md-nowrap">
+                                <table class="table mg-b-0 text-md-nowrap">
 										<thead>
 											<tr>
 
@@ -66,7 +66,7 @@
                                         <td>{{ $partner->desc }}</td>
                                         <td>{{ $partner->email }}</td>
                                         <td>{{ $partner->phone }}</td>
-                                        <td>{{ $partner->accept_date}}</td>
+                                        <td>{{ $partner->accept_date->format('Y-m-d')}}</td>
 										<td>
                                         <img class="img-responsive" src="{{asset('storage/Partners/'.$partner->logoUrl)}}"width="100"height="100">
                                         <td>
@@ -87,6 +87,9 @@
                                     @empty
                                    
                                 @endforelse
+                                <div class="d-flex justify-content-center">
+        {!! $partners->links()!!}
+       </div>
 
 
                             </tbody>

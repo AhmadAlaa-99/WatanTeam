@@ -74,8 +74,7 @@
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table id="example1" class="table key-buttons text-md-nowrap" data-page-length='50'
-                        style="text-align: center">
+                <table class="table mg-b-0 text-md-nowrap">
                         <thead>
                             <tr>
                                                <th class="border-bottom-0">#</th>
@@ -119,6 +118,9 @@
                                 </tr>
                                 @empty
                             @endforelse
+                            <div class="d-flex justify-content-center">
+        {!! $identifiers->links()!!}
+       </div>
                         </tbody>
                     </table>
                 </div>

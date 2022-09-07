@@ -38,7 +38,7 @@
 							</div>
 							<div class="card-body">
 								<div class="table-responsive">
-									<table id="example1" class="table key-buttons text-md-nowrap">
+                                <table class="table mg-b-0 text-md-nowrap">
 										<thead>
 											<tr>
 
@@ -74,7 +74,7 @@
                                         <td>{{ $coache->address }}</td>
                                        
                                         <td>{{ $coache->email }}</td>
-                                        <td>{{ $coache->accept_date }}</td>
+                                        <td>{{ $coache->accept_date->format('Y-m-d') }}</td>
                                         <td>{{ $coache->note }}</td>
 										<td>
                                             <a
@@ -98,6 +98,10 @@
                                     @empty
 
                                     @endforelse
+                                    <div class="d-flex justify-content-center">
+        {!! $coaches->links()!!}
+       </div>
+                                   
 
                             </tbody>
 									</table>

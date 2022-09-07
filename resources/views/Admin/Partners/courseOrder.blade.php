@@ -39,7 +39,7 @@
 							</div>
 							<div class="card-body">
 								<div class="table-responsive">
-									<table id="example1" class="table key-buttons text-md-nowrap">
+                                <table class="table mg-b-0 text-md-nowrap">
 										<thead>
 											<tr>
                     
@@ -64,7 +64,7 @@
                                         <td>{{ $i }}</td>
                                         <td>{{ $order->PartnerName }} </td>
                                         <td>{{ $order->CourseDesc }}</td>
-                                        <td>{{ $order->created_at }}</td>
+                                        <td>{{ $order->created_at->format('Y-m-d') }}</td>
                                             <div class="dropdown">
                                                 <button aria-expanded="false" aria-haspopup="true"
                                                     class="btn ripple btn-primary btn-sm" data-toggle="dropdown"
@@ -87,6 +87,9 @@
                                     </tr>
                                     @empty
                                 @endforelse
+                                <div class="d-flex justify-content-center">
+        {!! $PartnerCoursesOrder->links()!!}
+       </div>
 
                             </tbody>
 									</table>

@@ -14,7 +14,6 @@
 @section('title')
      فريق وطن - تعديل معلومات الفريق
 @stop
-
 @section('page-header')
     <!-- breadcrumb -->
     <div class="breadcrumb-header justify-content-between">

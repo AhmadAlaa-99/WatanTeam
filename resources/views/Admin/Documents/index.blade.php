@@ -38,7 +38,7 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table id="example1" class="table key-buttons text-md-nowrap">
+                            <table class="table mg-b-0 text-md-nowrap">
                                     <thead>
                                         <tr>
 											<tr>
@@ -67,8 +67,8 @@
                                         <td>{{ $i }}</td>
                                         <td>{{ $document->name }} </td>
                                         <td>{{ $document->docTypes }}</td>
-                                        <td>{{ $document->created_at }}</td>
-                                        <td>{{ $document->updated_at }}</td>
+                                        <td>{{ $document->created_at->format('Y-m-d') }}</td>
+                                        <td>{{ $document->updated_at->format('Y-m-d') }}</td>
                                         <td>{{ $document->description }}</td>
 										<td>{{ $document->departments->name }}</td>
 										<td>{{ $document->users->email }}</td>
@@ -99,6 +99,9 @@
                                     </tr>
                                     @empty
                                 @endforelse
+                                <div class="d-flex justify-content-center">
+        {!! $documents->links()!!}
+       </div>
 
                             </tbody>
 									</table>

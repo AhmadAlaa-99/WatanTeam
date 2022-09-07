@@ -109,6 +109,7 @@
 			</div>
 		</div>
 		<!-- Container closed -->
+	
 @endsection
 @section('js')
 <!--Internal  Chart.bundle js -->
@@ -133,17 +134,15 @@
 <script src="{{URL::asset('assets/js/jquery.vmap.sampledata.js')}}"></script>	
 
     <!-- jquery -->
-    <script src="{{URL::asset('assets/js/unica/jquery-3.2.1.min.js')}}"></script>
-    <!-- popper js -->
-    <script src="{{URL::asset('assets/js/unica/owl.carousel.min.js')}}"></script>
-    <!-- bootstrap js -->
-    <script src="{{URL::asset('assets/js/unica/jquery.countdown.js')}}"></script>
-    <!-- easing js -->
-    <script src="{{URL::asset('assets/js/unica/masonry.pkgd.min.js')}}"></script>
-    <!-- swiper js -->
-    <script src="{{URL::asset('assets/js/unica/magnific-popup.min.js')}}"></script>
-    <!-- swiper js -->
-    <script src="{{URL::asset('assets/js/unica/main.js')}}"></script>
+    <script src="{{URL::asset('assets/plugins/datatable/js/buttons.bootstrap4.min.js')}}"></script>
+<script src="{{URL::asset('assets/plugins/datatable/js/jszip.min.js')}}"></script>
+<script src="{{URL::asset('assets/plugins/datatable/js/pdfmake.min.js')}}"></script>
+<script src="{{URL::asset('assets/plugins/datatable/js/vfs_fonts.js')}}"></script>
+<script src="{{URL::asset('assets/plugins/datatable/js/buttons.html5.min.js')}}"></script>
+<script src="{{URL::asset('assets/plugins/datatable/js/buttons.print.min.js')}}"></script>
+<script src="{{URL::asset('assets/plugins/datatable/js/buttons.colVis.min.js')}}"></script>
+<script src="{{URL::asset('assets/plugins/datatable/js/responsive.bootstrap4.min.js')}}"></script>
+<script src="{{URL::asset('assets/js/table-data.js')}}"></script>
 
 
     

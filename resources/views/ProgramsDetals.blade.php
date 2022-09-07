@@ -107,7 +107,7 @@
 						</div>
 					</div>
 					<div class="course-info">
-						<div class="date"><i class="fa fa-clock-o"></i>    {{$program->created_at}}</div>
+						<div class="date"><i class="fa fa-clock-o"></i>    {{$program->created_at->format('Y-m-d')}}</div>
 						<h4>أهدافنا :  {{$program->goals}} </h4>
             <h4>الرؤية :  {{$program->audince}}</h4>
 						<h4 class="cource-price"> الفئة المستهدفة :  {{$program->topics}}</h4>

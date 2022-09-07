@@ -64,8 +64,6 @@
 @endif
 <!-- row -->
 <div class="row">
-
-
     <div class="col-xl-12">
         <div class="card mg-b-20">
             <div class="card-header pb-0">
@@ -77,8 +75,7 @@
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table id="example1" class="table key-buttons text-md-nowrap" data-page-length='50'
-                        style="text-align: center">
+                <table class="table mg-b-0 text-md-nowrap">
                         <thead>
                             <tr>
                                                <th class="border-bottom-0">#</th>
@@ -94,9 +91,10 @@
                                 <?php $i++; ?>
                                 <tr>
                                         <td>{{ $i }}</td>
+                                     
                                         <td>{{ $new->content }} </td>
-                                        <td>{{ $new->created_at }}</td>
-                                        <td>{{ $new->updated_at }}</td>
+                                        <td>{{ $new->created_at->format('Y-m-d')}}</td>
+                                        <td>{{ $new->updated_at->format('Y-m-d')}}</td>
                                         <td>
                                             <div class="dropdown">
                                                 <button aria-expanded="false" aria-haspopup="true"
@@ -116,10 +114,11 @@
                                 </tr>
                                 @empty
                             @endforelse
+                            <div class="d-flex justify-content-center">
+                             {!! $news->links()!!}
+                               </div>
                         </tbody>
-                        <div class="d-flex justify-content-center">
-        {!! $news->links()!!}
-       </div>
+                      
                     </table>
                 </div>
             </div>

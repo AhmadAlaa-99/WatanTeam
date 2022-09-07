@@ -38,7 +38,7 @@
 							</div>
 							<div class="card-body">
 								<div class="table-responsive">
-									<table id="example1" class="table key-buttons text-md-nowrap">
+								<table class="table mg-b-0 text-md-nowrap">
 										<thead>
 											<tr>
                                            
@@ -58,11 +58,14 @@
                                     <tr>
                                         <td>{{ $i }}</td>
                                         <td>{{ $course->CourseDesc }} </td>
-                                        <td>{{ $course->created_at }}</td>
+                                        <td>{{ $course->created_at->format('Y-m-d') }}</td>
                                    
                                     </tr>
 									@empty
                                     @endforelse
+									<div class="d-flex justify-content-center">
+        {!! $PartnerCourses->links()!!}
+       </div>
 
                                            </tbody>
 									</table>

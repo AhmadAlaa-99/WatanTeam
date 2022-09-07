@@ -107,7 +107,7 @@
 						</div>
 					</div>
 					<div class="course-info">
-						<div class="date"><i class="fa fa-clock-o"></i>    {{$course->created_at}}</div>
+						<div class="date"><i class="fa fa-clock-o"></i>    {{$course->created_at->format('Y-m-d')}}</div>
 						<h4>{{$course->desc}}<br>{{$course->note}}</h4>
 						<h4 class="cource-price">{{$course->Coach->username}}</h4>
 					</div>

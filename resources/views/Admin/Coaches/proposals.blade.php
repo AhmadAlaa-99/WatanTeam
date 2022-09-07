@@ -38,7 +38,7 @@
 						</div>
 						<div class="card-body">
 							<div class="table-responsive">
-								<table id="example1" class="table key-buttons text-md-nowrap">
+							<table class="table mg-b-0 text-md-nowrap">
 									<thead>
 										<tr>
 											    <th class="border-bottom-0">#</th>
@@ -62,11 +62,14 @@
                                         <td>{{ $i }}</td>
                                         <td>{{ $proposal->username }} </td>
                                         <td>{{ $proposal->content }} </td>
-                                        <td>{{ $proposal->created_at}} </td>
+                                        <td>{{ $proposal->created_at->format('Y-m-d')}} </td>
                                       					
                                     </tr>
 									@empty
                                 @endforelse
+								<div class="d-flex justify-content-center">
+        {!! $proposals->links()!!}
+       </div>
 
                             </tbody>
 									</table>
