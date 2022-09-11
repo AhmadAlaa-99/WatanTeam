@@ -51,7 +51,7 @@
                                 @php
                                 $i = 0;
                                 @endphp
-                                @forelse ($coach->Courses as $course)
+                                @forelse ($courses as $course)
                                     @php
                                     $i++
                                     @endphp
@@ -65,8 +65,8 @@
 									@empty
 									@endforelse
 									<div class="d-flex justify-content-center">
-        {!! $coach->Courses->links()!!}
-       </div>
+                                               {!! $courses->links()!!}
+                                           </div>
                                            </tbody>
 									</table>
 								</div>

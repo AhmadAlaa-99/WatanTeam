@@ -65,7 +65,7 @@
                                         <td>{{ $partner->desc }}</td>
                                         <td>{{ $partner->email }}</td>
                                         <td>{{ $partner->phone }}</td>
-                                        <td>{{ $partner->request_date->format('Y-m-d') }}</td>
+                                        <td>{{ $partner->request_date }}</td>
                                         
 										<td>
                                         <img class="img-responsive" src="{{asset('storage/Partners/'.$partner->logoUrl)}}"width="100"height="100">
@@ -117,7 +117,7 @@
                 </div>
                 <div class="modal-body">
                     هل انت متاكد من رفض طلب الشراكة ؟
-					{{ $partner->id }}
+					
                     <input type="hidden" name="partner_id" id="partner_id" value="">
                 </div>
                 <div class="modal-footer">

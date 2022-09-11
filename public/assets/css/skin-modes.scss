@@ -3894,16 +3894,16 @@ body.dark-theme.body-style1 {
 
 .leftmenu-color {
   .first-sidemenu {
-    background: #0162e8;
+    background: #0aa52b;
   }
 
   .second-sidemenu {
-    background: #0162e8;
+    background: #0aa52b;
     border-right: 1px solid rgba(255, 255, 255, 0.04) !important;
   }
 
   .first-sidemenu li.active, .resp-vtabs .resp-tab-active:hover {
-    background: #0162e8;
+    background: #0aa52b;
     border-right: 0 !important;
   }
 
@@ -3994,7 +3994,7 @@ body.dark-theme.body-style1 {
   .first-sidemenu {
     li {
       &.active svg, &:hover svg {
-        fill: #0162e8;
+        fill: #0aa52b;
       }
     }
 
@@ -4107,7 +4107,7 @@ body.dark-theme.body-style1 {
 
   .first-sidemenu li {
     &.active svg, &:hover svg {
-      fill: #0162e8;
+      fill: #0aa52b;
     }
   }
 

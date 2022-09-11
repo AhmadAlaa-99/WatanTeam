@@ -17,7 +17,7 @@ class ContactSeeder extends Seeder
     {
      $contact=Contact::create([
         'email'=>'watan@gmail.com',
-        'phone'=>'963',
+        'phone'=>'966000000000',
         'facebook'=>'www.facebook.com',
         'insta'=>'www.instagram.com',
         'twitter'=>'www.twitter.com',

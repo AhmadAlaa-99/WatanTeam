@@ -32,8 +32,8 @@
         <ul>
 
             <li><a href="#images">صور أعلامية</a></li>
-            <li><a href="#footer">قناة الفريق</a></li>
-            <li><a href="#media">الملف الإعلامي</a></li>
+            <li><a href="#identifier">قناة الفريق</a></li>
+            <li><a href="#media_profile">الملف الإعلامي</a></li>
         </ul>
     </li>
     <li><a class="nav-link scrollto" href="#contact">اتصل بنا</a></li>
@@ -46,7 +46,7 @@
     @if(Auth::user()->hasRole('Coache'))
     <li><a class="nav-link scrollto" href="{{ url('/' . $page='CoacheDetails') }}">معلومات التدريب</a></li>
     <li><a class="nav-link scrollto" data-toggle="modal" href="#proposal">تقديم اقتراح</a></li> 
-    @endif
+    @endif 
     @endauth
     @can('لوحة التحكم')
     <li><a class="nav-link scrollto" href="{{route('dashboard')}}">لوحة التحكم </a></li>

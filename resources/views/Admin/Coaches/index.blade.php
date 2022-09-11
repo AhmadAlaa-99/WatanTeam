@@ -74,7 +74,7 @@
                                         <td>{{ $coache->address }}</td>
                                        
                                         <td>{{ $coache->email }}</td>
-                                        <td>{{ $coache->accept_date->format('Y-m-d') }}</td>
+                                        <td>{{ $coache->accept_date}}</td>
                                         <td>{{ $coache->note }}</td>
 										<td>
                                             <a
@@ -127,7 +127,7 @@
                 </div>
                 <div class="modal-body">
                     هل انت متاكد من عملية الحذف ؟
-					{{ $coache->id }}
+					
                     <input type="hidden" name="coache_id" id="coache_id" value="">
                 </div>
                 <div class="modal-footer">

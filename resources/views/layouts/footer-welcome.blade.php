@@ -29,11 +29,11 @@
                         <h4>خدماتنا</h4>
                         <ul>
                             @guest
-                            <li><i class="bx bx-chevron-right"></i> <a href="#modaldemo1">طلب شراكة</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="##modaldemo2">طلب انضمام</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#join_partner">طلب شراكة</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#scrollmodal">طلب انضمام</a></li>
                             @endguest
-                            <li><i class="bx bx-chevron-right"></i> <a href="#programs">البرامج التدريبية</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#courses"> الدورات التدريبية</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="{{route('programs')}}">البرامج التدريبية</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="{{route('courses')}}"> الدورات التدريبية</a></li>
                             
                         </ul>
                     </div>
@@ -65,63 +65,15 @@
         </div>
     </footer><!-- End Footer -->
 
-
-
-        <div class="modal" id="join_partner" >
-			<div class="modal-dialog" role="document">
-				<div class="modal-content modal-content-demo">
-                <div class="modal-header">
-                    <h6 class="modal-title"> يسعدنا اختيارك لشراكتنا</h6>
-                    <button aria-label="Close" class="close" data-dismiss="modal"
-                        type="button"><span aria-hidden="true">&times;</span></button>
-                </div>
-                <div class="modal-body">
-                    <form action="{{route('requestPartner')}}" method="post"enctype="multipart/form-data">
-                        {{ csrf_field() }}
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">اسم الشركة </label>
-                            <input type="text" class="form-control" id="name" name="name">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="exampleFormControlTextarea1">مجال عمل الشركة</label>
-                            <textarea class="form-control" id="desc" name="desc" rows="3"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlTextarea1"> البريد الالكتروني </label>
-                            <textarea class="form-control" id="email" name="email" rows="1"></textarea>
-                        </div>
-       
-                        <div class="input-group">
-                           <input type="tel" class="form-control">
-                           <span class="input-group-addon">Tel</span>
-                        </div>
-                        <div class="col">
-                                <label for="inputName" class="control-label">logo</label>
-						                		<input type="file" name="logoUrl" class="dropify" accept=".pdf,.jpg, .png, image/jpeg, image/png"
-                                data-height="70" />
-                                </select>
-                            </div>
-                        <h>سوف يتم التواصل لاحقا عن طريق البريد الالكتروني المسجل</h>
-                        <div class="modal-footer">
-                            <button type="submit" class="btn btn-success">تاكيد</button>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">اغلاق</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-</div>
-
-<div class="modal" id="scrollmodal">
+    <div class="modal" id="scrollmodal">
 			<div class="modal-dialog modal-dialog-scrollable" role="document">
 				<div class="modal-content modal-content-demo">
 					<div class="modal-header">
 						<h6 class="modal-title">يسعدنا طلب انضمامك للفريق</h6><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
 					</div>
 					<div class="modal-body">
-                    <form action="{{route('requestCoache')}}" method="post" enctype="multipart/form-data"
-                        autocomplete="off">
+                    
+                    <form action="{{route('requestCoache')}}" method="post" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="form-group">
                             <label for="exampleInputEmail1">الاسم الكامل</label>
@@ -160,23 +112,70 @@
                        
                             
                         <div class="col">
-                                <label for="inputName" class="control-label">السيرة الذاتية</label>
+                                 <label for="inputName" class="control-label">السيرة الذاتية</label>
 						                 		<input type="file" name="cvFile"roe="1" class="dropify" accept=".pdf,.jpg, .png, image/jpeg, image/png"
                                 data-height="70" required/>
                                 </select>
                         </div> 
                         <h>سوف يتم التواصل لاحقا عن طريق البريد الالكتروني المسجل</h>
                        
-                    </form>
+                    
 					</div>
                     <div class="modal-footer">
                             <button type="submit" class="btn btn-success">تاكيد</button>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">اغلاق</button>
                         </div>
+                        </form>
 				</div>
 			</div>
 		</div>
 		<!--End Scroll with content modal -->
+
+        <div class="modal" id="join_partner" >
+			<div class="modal-dialog" role="document">
+				<div class="modal-content modal-content-demo">
+                <div class="modal-header">
+                    <h6 class="modal-title"> يسعدنا اختيارك لشراكتنا</h6>
+                    <button aria-label="Close" class="close" data-dismiss="modal"
+                        type="button"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <form action="{{route('requestPartner')}}" method="post"enctype="multipart/form-data">
+                        {{ csrf_field() }}
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">اسم الشركة </label>
+                            <input type="text" class="form-control" id="name" name="name"required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">مجال عمل الشركة</label>
+                            <textarea class="form-control" id="desc" name="desc" rows="3"required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1"> البريد الالكتروني </label>
+                            <textarea class="form-control" id="email" name="email" rows="1"required></textarea>
+                        </div>
+       
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">الهاتف  </label>
+                            <input type="text" class="form-control" id="phone" name="phone"required>
+                        </div>
+                        <div class="col">
+                                <label for="inputName" class="control-label">شعار الشركة</label>
+						        <input type="file" name="logoUrl" class="dropify" accept=".pdf,.jpg, .png, image/jpeg, image/png"
+                                data-height="70" required/>
+                                </select>
+                            </div>
+                        <h>سوف يتم التواصل لاحقا عن طريق البريد الالكتروني المسجل</h>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-success">تاكيد</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">اغلاق</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+</div>
 
        
         

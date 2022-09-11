@@ -66,7 +66,7 @@
                                         <td>{{ $partner->desc }}</td>
                                         <td>{{ $partner->email }}</td>
                                         <td>{{ $partner->phone }}</td>
-                                        <td>{{ $partner->accept_date->format('Y-m-d')}}</td>
+                                        <td>{{ $partner->accept_date}}</td>
 										<td>
                                         <img class="img-responsive" src="{{asset('storage/Partners/'.$partner->logoUrl)}}"width="100"height="100">
                                         <td>

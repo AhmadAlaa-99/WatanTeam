@@ -29,7 +29,7 @@ $permissions = Permission::pluck('id','id')->all();
 
 $role->syncPermissions($permissions);
 
-$user->assignRole([$role->id]);
+$user->assignRole([$role->id]); 
 
 $role = Role::create(['name' => 'Partner']);
 

@@ -156,7 +156,7 @@
 					<div class="course-info">
 						<div class="date"><i class="fa fa-clock-o"></i>    {{$course->created_at->format('Y-m-d')}}</div>
 						<h4>{{$course->desc}}<br>{{$course->note}}</h4>
-						<h4 class="cource-price">{{$course->Coach->username}}</h4>
+						<h4 class="cource-price">Coache : {{$course->Coach->username}}</h4>
 					</div>
 				</div>
 		    @empty
@@ -184,8 +184,10 @@
 					</div>
 					<div class="course-info">
 						<div class="date"><i class="fa fa-clock-o"></i>    {{$activity->pubDate}}</div>
-						<h4>{{$activity->note}}</h4>
-						<h4 class="cource-price">{{$activity->programs->name}}</h4>
+            <h4 class="cource-price">{{$activity->programs->name}}</h4>
+            
+						<h4 class="cource-price" >تنويه : {{$activity->note}}</h4>
+						
 					</div>
 				</div>
               
@@ -220,8 +222,8 @@
 					<div class="course-info">
 						<div class="date"><i class="fa fa-clock-o"></i>    {{$program->created_at->format('Y-m-d')}}</div>
 						<h4>أهدافنا :  {{$program->goals}} </h4>
-            <h4>الرؤية :  {{$program->audince}}</h4>
-						<h4 class="cource-price"> الفئة المستهدفة :  {{$program->topics}}</h4>
+            <h4>الرؤية :  {{$program->topics}}</h4>
+						<h4 class="cource-price"> الفئة المستهدفة :  {{$program->audince}}</h4>
             <h4 class="cource-price">  فئة البرنامج :  {{$program->cats->name}}</h4>
 					</div>
 				</div>
@@ -281,7 +283,7 @@
 
 
 	<!-- News section -->
-	<section class="blog-section spad">
+	<section id="media_profile" class="blog-section spad">
 		<div class="container">
 			<div class="section-title text-center">
 				<h3>أخبارنا</h3>
@@ -311,7 +313,8 @@
 	
 
   <!-- Gallery section -->
-	<div class="gallery-section">
+  <section  id="images">
+	<div  class="gallery-section">
 		<div class="gallery">
 			<div class="grid-sizer"></div>
 			@forelse ($images as $key => $image)
@@ -322,20 +325,18 @@
 	@endforelse
 		
      
-			
-		
-    
-
+	
 		</div>
 	</div>
 </div>
+</section>
 
 
     <!-- ======= Cards Team Section ======= -->
-    <section id="team" class="team">
+    <section class="team">
       <div class="container">
 
-        <div class="section-title" data-aos="fade-up">
+        <div id="identifier"class="section-title" data-aos="fade-up">
           <h2>فريق وطن</h2>
           <p>تعرف على فريق وطن التطوعي للتدريب</p>
         </div>

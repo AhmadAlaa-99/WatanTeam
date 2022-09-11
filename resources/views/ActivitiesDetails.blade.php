@@ -107,11 +107,14 @@
 						</div>
 					</div>
 					<div class="course-info">
-						<div class="date"><i class="fa fa-clock-o"></i>    {{$activity->pubDate->format('Y-m-d')}}</div>
-						<h4>{{$activity->note}}</h4>
-						<h4 class="cource-price">{{$activity->programs->name}}</h4>
+						<div class="date"><i class="fa fa-clock-o"></i>    {{$activity->pubDate}}</div>
+            <h4 class="cource-price">{{$activity->programs->name}}</h4>
+            
+						<h4 class="cource-price" >تنويه : {{$activity->note}}</h4>
+						
 					</div>
 				</div>
+              
 		    @empty
         @endforelse
         <div class="d-flex justify-content-center">

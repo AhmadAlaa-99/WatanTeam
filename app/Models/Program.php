@@ -21,6 +21,7 @@ class Program extends Model
     {
         return $this->hasMany('App\Models\Activity');
     }
+    /*
     public function setCreatedAt($value)
     {
         $this->attributes['created_at']=Carbon::createFromFormat('m/d/y',$value)->format('Y-m-d');
@@ -29,4 +30,5 @@ class Program extends Model
     {
         return Carbon::createFromFormat('Y-m-d',$this->attributes['created_at'])->format('m/d/y');
     }
+    */
 }

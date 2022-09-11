@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
+use App\Models\Course;
 use App\Notifications\RequestCoachNotify;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Response;
@@ -132,10 +133,11 @@ class CoachController extends Controller
        
        $coach=Coach::where('id',$id)->select('id','username','accept_date')->first();
       // return $coach->id;
-      // $courses=Course::where('coache_id',$coach->id);
+       $courses=Course::where('coache_id',$id)->paginate(5);
      //  return dd($coach->Courses);
        return View('Admin.Coaches.Details')->with([
         'coach'=>$coach,
+        'courses'=>$courses
        ]);
 
     }

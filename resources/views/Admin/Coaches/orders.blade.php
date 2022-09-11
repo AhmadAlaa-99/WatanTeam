@@ -70,7 +70,7 @@
                                         <td>{{ $coache->job }}</td>
                                         <td>{{ $coache->address }}</td>
                                         <td>{{ $coache->email }}</td>
-                                        <td>{{ $coache->request_date->format('Y-m-d') }}</td>
+                                        <td>{{ $coache->request_date }}</td>
                                         <td>{{ $coache->note }}</td>
 										<td><a
                                         href="{{route('down.CV',$coache->id)}}">download cv</a> 
@@ -84,13 +84,10 @@
                                                         
 												
 															<a class="dropdown-item"  href="#" data-coache_id="{{ $coache->id }}"
-                                                            data-toggle="modal" data-target="#delete_coache"><i
-                                                                class="text-danger fas fa-trash-alt"></i>رفض </a>
+                                                            data-toggle="modal" data-target="#delete_coache">رفض</a>
 
                                                                 <a class="dropdown-item"
-                                                            href="{{route('coaches.accept',$coache->id)}}">
-                                                                موافقة
-                                                            </a>
+                                                            href="{{route('coaches.accept',$coache->id)}}">موافقة</a>
                                                                 
                                                 </div>
                                             </div>

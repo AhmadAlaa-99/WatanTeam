@@ -104,14 +104,7 @@
                                 <input type="text" class="form-control" id="skype" name="skype"
                                     title="يرجي ادخال الرابط   "value="{{$contact->skype}}" required>
                             </div>
-                            <div class="row">
-							<div class="col">
-                                <label for="inputName" class="control-label">المرفقات</label>
-								<input type="file" name="images" class="dropify" accept=".pdf,.jpg, .png, image/jpeg, image/png"
-                                data-height="70" />
-                                </select>
-                            </div>
-                                  </div>
+                         
                         </div>
                         <br>
                         <div class="d-flex justify-content-center">
