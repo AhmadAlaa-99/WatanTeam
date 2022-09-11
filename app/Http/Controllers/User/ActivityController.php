@@ -22,7 +22,7 @@ class ActivityController extends Controller
         $courses=Course::all();
         $aboutUs=AboutUs::first();
         $activities=Activity::select('name','pubDate', 'imageUrl','published','note','program_id')->with('programs')->latest()->paginate(3);
-     return view('ActivitiesDetails',compact('activities','contacts','aboutUs','courses'));
+         return view('ActivitiesDetails',compact('activities','contacts','aboutUs','courses'));
    }
     /**
      * Display the specified resource.

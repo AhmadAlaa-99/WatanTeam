@@ -70,9 +70,11 @@ Route::group([
   //cats//
   Route::resource('/cats',          \Admin\ProgramCatController::class);
   //programs//
+  Route::delete('/program/{id}',[AdminProgramController::class,'destroy'])->name('program.destroy');
   Route::resource('/programs',       \Admin\ProgramController::class); //Create/store/edit/update/destroy
   //  programs active and disabled  in view disabled actived
   //Route::post('programs/update/{id}',     [AdminProgramController::class, 'update']);
+  Route::delete('/activity/{id}',[AdminActivityController::class,'destroy'])->name('activity.destroy');
   Route::get('/ShowActPro',          [AdminProgramController::class, 'ShowActPro'])->name('ShowActPro');
   Route::get('/showDisPro',          [AdminProgramController::class, 'showDisPro'])->name('showDisPro');
   Route::get('/DisPro/{program}',              [AdminProgramController::class, 'DisPro'])->name('DisPro');

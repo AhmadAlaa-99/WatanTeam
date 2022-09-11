@@ -116,7 +116,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <form action="{{ route('programs.destroy',$program->id) }}" method="post">
+                    <form action="{{ route('program.destroy',$program->id) }}" method="post">
                         {{ method_field('delete') }}
                         {{ csrf_field() }}
                 </div>
@@ -165,4 +165,13 @@
 <script src="{{URL::asset('assets/plugins/datatable/js/responsive.bootstrap4.min.js')}}"></script>
 <!--Internal  Datatable js -->
 <script src="{{URL::asset('assets/js/table-data.js')}}"></script>
+<script>
+        $('#delete_program').on('show.bs.modal', function(event) {
+            var button = $(event.relatedTarget)
+            var program_id = button.data('program_id')
+            var modal = $(this)
+            modal.find('.modal-body #program_id').val(program_id);
+        })
+
+    </script>
 @endsection

@@ -44,7 +44,7 @@
 											    <th class="border-bottom-0">#</th>
 												<th class="border-bottom-0">name</th>
 												<th class="border-bottom-0">Date</th>
-												<th class="border-bottom-0">program</th>
+												
 												<th class="border-bottom-0">attachment</th>
 												<th class="border-bottom-0">note</th>
 												
@@ -62,7 +62,7 @@
                                         <td>{{ $i }}</td>
                                         <td>{{ $activity->name}} </td>
                                         <td>{{ $activity->pubDate }}</td>
-                                        <td>{{ $activity->programs->name }}</td>
+                                        
 										<td>
 
                                             <img class="img-responsive" src="{{asset('storage/Activities/'.$activity->imageUrl)}}"width="100"height="100"> 
@@ -111,9 +111,11 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <form action="{{ url('dashboard/activities/'.$activity->id)}}" method="post">
+                    
+                    <form action="{{ route('activity.destroy', $activity->id) }}"method="post">
                         {{ method_field('delete') }}
                         {{ csrf_field() }}
+                        
                 </div>
                 <div class="modal-body">
                     هل انت متاكد من عملية الحذف ؟
@@ -161,4 +163,13 @@
 <script src="{{URL::asset('assets/plugins/datatable/js/responsive.bootstrap4.min.js')}}"></script>
 <!--Internal  Datatable js -->
 <script src="{{URL::asset('assets/js/table-data.js')}}"></script>
+<script>
+        $('#delete_activity').on('show.bs.modal', function(event) {
+            var button = $(event.relatedTarget)
+            var activity_id = button.data('activity_id')
+            var modal = $(this)
+            modal.find('.modal-body #activity_id').val(activity_id);
+        })
+
+    </script>
 @endsection

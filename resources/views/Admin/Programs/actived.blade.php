@@ -89,7 +89,7 @@
 															<a class="dropdown-item"  href="#" data-program_id="{{ $program->id }}"
                                                             data-toggle="modal" data-target="#delete_program"><i
                                                                 class="text-danger fas fa-trash-alt"></i>حذف
-                                                            البرنامج</a>
+                                                             البرنامج</a>
                                                 </div>
                                             </div>
                                         </td>
@@ -117,13 +117,13 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <form action="{{ route('programs.destroy',$program->id) }}" method="post">
+                    <form action="{{ route('program.destroy',$program->id) }}" method="post">
                         {{ method_field('delete') }}
                         {{ csrf_field() }}
                 </div>
                 <div class="modal-body">
                     هل انت متاكد من عملية الحذف ؟
-					{{ $program->id }}
+					
                     <input type="hidden" name="program_id" id="program_id" value="">
                 </div>
                 <div class="modal-footer">
@@ -144,7 +144,9 @@
 		</div>
 		<!-- main-content closed -->
 		@endif
+
 @endsection
+
 @section('js')
 <!-- Internal Data tables -->
 <script src="{{URL::asset('assets/plugins/datatable/js/jquery.dataTables.min.js')}}"></script>
@@ -165,4 +167,13 @@
 <script src="{{URL::asset('assets/plugins/datatable/js/responsive.bootstrap4.min.js')}}"></script>
 <!--Internal  Datatable js -->
 <script src="{{URL::asset('assets/js/table-data.js')}}"></script>
+<script>
+        $('#delete_program').on('show.bs.modal', function(event) {
+            var button = $(event.relatedTarget)
+            var program_id = button.data('program_id')
+            var modal = $(this)
+            modal.find('.modal-body #program_id').val(program_id);
+        })
+
+    </script>
 @endsection

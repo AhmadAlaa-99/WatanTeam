@@ -56,18 +56,20 @@
 
 
 <!-- row -->
+
 <div class="row">
-
-
     <div class="col-xl-12">
         <div class="card mg-b-20">
             <div class="card-header pb-0">
+           
                 <div class="d-flex justify-content-between">
+                
                         <a class="modal-effect btn btn-outline-primary btn-block" data-effect="effect-scale"
                             data-toggle="modal" href="#modaldemo8">اضافة صورة</a>
                 </div>
 
             </div>
+         
             <div class="card-body">
                 <div class="table-responsive">
                 <table class="table mg-b-0 text-md-nowrap">
@@ -106,9 +108,7 @@
                                 </tr> 
                                 @empty
                             @endforelse
-                            <div class="d-flex justify-content-center">
-        {!! $media->links()!!}
-       </div>
+          
                         </tbody>
                     </table>
                 </div>
@@ -163,8 +163,9 @@
                     {{ csrf_field() }}
                     <div class="modal-body">
                         <p>هل انت متاكد من عملية الحذف ؟</p><br>
-                        <input type="hidden" name="id" id="id" value="">
-                        <input class="form-control" name="main" id="main" type="text" readonly>
+                       
+                        <input type="hidden" name="media_id" id="media_id" value="">
+                      
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">الغاء</button>
@@ -207,7 +208,15 @@
 <!--Internal  Datatable js -->
 <script src="{{ URL::asset('assets/js/table-data.js') }}"></script>
 <script src="{{ URL::asset('assets/js/modal.js') }}"></script>
+<script>
+        $('#delete_media').on('show.bs.modal', function(event) {
+            var button = $(event.relatedTarget)
+            var media_id = button.data('media_id')
+            var modal = $(this)
+            modal.find('.modal-body #media_id').val(media_id);
+        })
 
+    </script>
 <script>
     $('#exampleModal2').on('show.bs.modal', function(event) {
         var button = $(event.relatedTarget)

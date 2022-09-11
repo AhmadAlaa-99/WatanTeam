@@ -16,8 +16,9 @@ class MediaController extends Controller
 
     public function index()
     {
+        
                 $media= Image::select('id','desc','imageUrl')->latest()->paginate(8);
-                return view('Admin.Contacts.media',compact('media'));
+                return view('Admin.Contacts.media',compact('media')); 
     }
     public function store(Request $request)
     {
@@ -38,9 +39,10 @@ class MediaController extends Controller
             }  
             
         }
-        public function destroy($id)
+        public function destroy(Request $request)
         {
-            $image=Image::where('id',$id)->first();
+           
+            $image=Image::where('id',$request->media_id)->first();
             $image->delete();
             return back();
         }

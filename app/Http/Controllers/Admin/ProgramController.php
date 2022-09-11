@@ -205,15 +205,16 @@ class ProgramController extends Controller
 }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified resource from storage. 
      *
      * @param  \App\Models\program  $program
      * @return \Illuminate\Http\Response
      */
-    public function destroy(program $program)
+    public function destroy(Request $request)
     {
+        
       //  return $program->id;
-        $program=Program::where('id',$program->id)->first();
+        $program=Program::where('id',$request->program_id)->first();
         //return $program;
         $program->delete();
         return redirect()->route('ShowActPro')->with([
