@@ -143,10 +143,10 @@ class ActivityController extends Controller
      *
      * @param  \App\Models\Activity $activity
      */
-    public function destroy(Request $request)
-    { 
-       return $request->activity_id;
-        $activity=Activity::where('id',$request->activity_id)->first();
+    public function destroy(Activity $activity,Request $request)
+    {
+
+        $activity=Activity::where('id',$activity->id)->first();
         $activity->delete();
         return redirect()->route('activities.index')->with([
             'message' => 'Acivity delete successfully',

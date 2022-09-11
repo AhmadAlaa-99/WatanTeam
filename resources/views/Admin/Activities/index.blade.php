@@ -112,7 +112,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                     
-                    <form action="{{ route('activity.destroy', $activity->id) }}"method="post">
+                    <form action="{{ url('dashboard/activities/'.$activity->id)}}" method="post">
                         {{ method_field('delete') }}
                         {{ csrf_field() }}
                         

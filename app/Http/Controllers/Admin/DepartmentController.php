@@ -103,9 +103,9 @@ class DepartmentController extends Controller
      * @param  \App\Models\Department  $department
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Department $department)
+    public function destroy(Department $department,Request $request)
     {
-        $department=Department::where('id',$department->id)->first();
+        $department=Department::where('id',$request->department_id)->first();
         $department->delete();
         return redirect()->route('departments.index')->with([
             'message' => 'Department update successfully',

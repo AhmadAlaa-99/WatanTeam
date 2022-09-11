@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\DocumentController;
 use App\Http\Controllers\Admin\MediaController;
 use App\Http\Controllers\Admin\DocumentsTypeController;
 use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\Admin\DepartmentController;
 
 
 use App\Http\Controllers\User\CoachController as UserCoachController;
@@ -126,6 +127,7 @@ Route::group([
   
   
   //Departments//
+  Route::delete('/department/{id}',[DepartmentController::class,'destroy'])->name('department.destroy');
   Route::resource('/departments',     \Admin\DepartmentController::class);  
   //Document
   Route::resource('/documents',      \Admin\DocumentController::class);

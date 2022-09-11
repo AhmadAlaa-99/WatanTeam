@@ -115,10 +115,10 @@
                     <form action="{{ url('dashboard/courses/'.$course->id)}}" method="post">
                         {{ method_field('delete') }}
                         {{ csrf_field() }}
-                </div>
+                </div>  
                 <div class="modal-body">
                     هل انت متاكد من عملية الحذف ؟
-					{{ $course->id }}
+					
                     <input type="hidden" name="course_id" id="course_id" value="">
                 </div>
                 <div class="modal-footer">
